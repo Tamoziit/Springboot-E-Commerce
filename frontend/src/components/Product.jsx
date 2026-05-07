@@ -106,7 +106,7 @@ const Product = () => {
 						</p>
 					</div>
 
-					<div className="update-button ">
+					<div className="update-button">
 						<button
 							className="btn btn-primary"
 							type="button"
@@ -116,7 +116,7 @@ const Product = () => {
 						</button>
 						{/* <UpdateProduct product={product} onUpdate={handleUpdate} /> */}
 						<button
-							className="btn btn-primary"
+							className="btn btn-danger"
 							type="button"
 							onClick={deleteProduct}
 						>

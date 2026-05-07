@@ -41,9 +41,6 @@ public class ProductController {
 
     @PostMapping("/product")
     public ResponseEntity<?> addProduct(@RequestPart Product product, @RequestPart MultipartFile imageFile) { // RequestPart --> accepts a part of body as one format (say Product) & the other in another format (say File media)
-        System.out.println(product);
-        System.out.println(imageFile);
-
         try {
             Product response = service.addProduct(product, imageFile);
 
@@ -96,5 +93,11 @@ public class ProductController {
         } else {
             return new ResponseEntity<>("Product not found", HttpStatus.NOT_FOUND);
         }
+    }
+
+    @GetMapping("/products/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String keyword) { // query params /products/search?keyword="..."
+        List<Product> products = service.searchProducts(keyword);
+        return new ResponseEntity<>(products, HttpStatus.OK);
     }
 }

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import AppContext from "../context/Context";
+import unplugged from "../assets/unplugged.png"
 
 const Home = ({ selectedCategory }) => {
 	const { data, isError, addToCart, refreshData } = useContext(AppContext);
@@ -52,14 +53,24 @@ const Home = ({ selectedCategory }) => {
 
 	if (isError) {
 		return (
-			<h2 className="text-center" style={{ padding: "10rem" }}>
-				Something went wrong...
+			<h2 className="text-center" style={{ padding: "18rem" }}>
+				<img src={unplugged} alt="Error" style={{ width: '100px', height: '100px' }} />
 			</h2>
 		);
 	}
+
 	return (
 		<>
-			<div className="grid">
+			<div
+				className="grid"
+				style={{
+					marginTop: "64px",
+					display: "grid",
+					gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+					gap: "20px",
+					padding: "20px",
+				}}
+			>
 				{filteredProducts.length === 0 ? (
 					<h2
 						className="text-center"
