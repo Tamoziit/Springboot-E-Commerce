@@ -11,6 +11,7 @@ import { AppProvider } from "./context/Context";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import UpdateProduct from "./components/UpdateProduct.jsx";
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
 					<Route path="/product" element={<Product />} />
 					<Route path="product/:id" element={<Product />} />
 					<Route path="/cart" element={<Cart />} />
+					<Route path="/product/update/:id" element={<UpdateProduct />} />
 				</Routes>
 			</BrowserRouter>
 		</AppProvider>

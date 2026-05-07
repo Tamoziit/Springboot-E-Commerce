@@ -1,5 +1,5 @@
 /* Seeding Data */
-INSERT INTO
+/*INSERT INTO
         product (
                 name,
                 desc,
@@ -60,4 +60,4 @@ VALUES
                 '2024-05-01',
                 true,
                 60
-        );
+        );*/
